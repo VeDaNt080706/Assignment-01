@@ -1,61 +1,39 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Leaf, ShieldCheck, Sparkles, Truck, Star, Heart, ShoppingBag } from 'lucide-react'
+import { ArrowRight, Leaf, ShieldCheck, Sparkles, Truck } from 'lucide-react'
 import { Button } from '../Components/Button'
 import { FeatureCard } from '../Components/FeatureCard'
 import { ProductCard } from '../Components/ProductCard'
 import { TestimonialCard } from '../Components/TestimonialCard'
 
 export default function Homepage() {
-  const [activeLook, setActiveLook] = useState(0)
-
-  const lookbook = [
-    {
-      id: 1,
-      title: 'Classic Cable-Knit Sweater',
-      price: '$89.00',
-      description: 'Heavily textured sky blue knit pullover crafted from organic wool-blend fibers.',
-      image: '/media__1781118956389.jpg',
-      category: 'Sweaters'
-    },
-    {
-      id: 4,
-      title: 'Cream White Knit Sweater',
-      price: '$85.00',
-      description: 'Elegant cream knit crewneck sweater featuring dense knit cabling and double-ribbed edges.',
-      image: '/media__1781118956841.jpg',
-      category: 'Sweaters'
-    },
-    {
-      id: 2,
-      title: 'Striped Casual Oxford',
-      price: '$59.00',
-      description: 'Comfortable band-collar linen shirt styled with clean blue-and-white vertical pin-striping.',
-      image: '/media__1781118956555.jpg',
-      category: 'Shirts'
-    }
+  const categories = [
+    { name: 'Men', image: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=600' },
+    { name: 'Women', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600' },
+    { name: 'Accessories', image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=600' },
+    { name: 'New Arrivals', image: '/media__1781118956877.jpg' }
   ]
 
   const features = [
     {
       icon: Leaf,
-      title: 'Organic & Recycled Fabrics',
-      description: '95% of our fibers are certified organic cotton, merino wool, or GRS-recycled polyester.'
+      title: 'Organic Sourcing',
+      description: 'Certified linen, organic cotton, and premium recycled polymers selected for comfort.'
     },
     {
       icon: ShieldCheck,
-      title: 'Double-Stitched Seams',
-      description: 'Reinforced stress points, heavy-duty buttons, and knit ribbing built to keep shape for years.'
+      title: 'Built to Last',
+      description: 'Double-stitched stress zones, reinforced neck collars, and select dense threads.'
     },
     {
       icon: Sparkles,
-      title: 'Timeless Silhouette Design',
-      description: 'Garments designed with clean, minimalist cuts that stack, layer, and coordinate effortlessly.'
+      title: 'Minimal Silhouette',
+      description: 'Clean, understated cuts engineered to coordinate across seasons.'
     },
     {
       icon: Truck,
-      title: 'Carbon-Neutral Delivery',
-      description: 'Offsets calculated on all shipments. Enjoy free US shipping and seamless 30-day returns.'
+      title: 'Ethical Delivery',
+      description: 'Carbon-neutral logistics with free returns and worldwide door tracking.'
     }
   ]
 
@@ -117,135 +95,185 @@ export default function Homepage() {
 
   const testimonials = [
     {
-      quote: "The cable-knit sweater is thick, luxurious, and heavy. It washed perfectly and didn't shrink or lose shape. Absolute favorite wardrobe addition.",
+      quote: "The cream cable-knit is thick, heavy, and fits beautifully around the shoulders. It is a wardrobe staple that has held its structure perfectly.",
       author: "Liam H.",
-      role: "Designer",
-      company: "Atelier Studio",
+      role: "Atelier Architect",
+      company: "Mode NY",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=LiamH",
       rating: 5
     },
     {
-      quote: "Extremely pleased with the vertical striped cotton shirt. The collar holds up nicely under jackets and the organic cotton fabric is incredibly breathable.",
+      quote: "Breathable fabric, crisp vertical stripes, and a very comfortable band collar. Perfect clean design matching modern luxury standards.",
       author: "Clara M.",
-      role: "Creative Director",
-      company: "Mode NY",
+      role: "Creative Lead",
+      company: "Studio Editorial",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ClaraM",
       rating: 5
     },
     {
-      quote: "Shipping was fast, and the jacket fit perfectly. I love that they prioritize carbon-neutral supply lines and ethically audited sewing studios.",
+      quote: "I admire their transparency and carbon offsets. The merino wool trench fits warm and fits true. A true investment piece.",
       author: "Marcus K.",
-      role: "Frontend Engineer",
-      company: "Webflow",
+      role: "Software Designer",
+      company: "Atelier",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MarcusK",
       rating: 5
     }
   ]
 
+  const handleSubscribe = (e) => {
+    e.preventDefault()
+    alert('Thank you for joining the Trendystyle Atelier Club!')
+  }
+
   return (
     <div className="bg-[#F8FAFC] text-[#111827] min-h-screen">
       
-      {/* Hero Section */}
-      <section className="relative pt-28 pb-16 overflow-hidden bg-gradient-to-br from-blue-50/40 via-white to-[#F8FAFC]">
-        {/* Decorative elements */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-400/5 blur-3xl rounded-full -z-10" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-400/5 blur-3xl rounded-full -z-10" />
+      {/* 1. Hero Section - Full height high contrast layout */}
+      <section className="relative min-h-[90vh] flex items-center justify-start bg-slate-900 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/media__1781118956841.jpg"
+            alt="Trendystyle Editorial Knitwear"
+            className="w-full h-full object-cover object-[center_35%] filter brightness-[0.82]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent pointer-events-none" />
+        </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Hero Content */}
-            <div className="lg:col-span-6 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold text-[#2563EB] mb-6 shadow-sm">
-                <span className="flex h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
-                Summer Knitwear Release Live
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#111827] leading-[1.08] mb-6">
-                Crafted for Comfort, <br />
-                <span className="bg-gradient-to-r from-[#2563EB] to-indigo-600 bg-clip-text text-transparent">
-                  Tailored for Style
-                </span>
-              </h1>
-              
-              <p className="text-[#6B7280] text-base sm:text-lg leading-relaxed max-w-xl mb-8 font-medium">
-                Elevate your daily apparel selection with certified organic fabrics, reinforced tailor seams, and comfortable silhouettes that span seasons.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link to="/products">
-                  <Button variant="primary" size="lg" icon={ArrowRight} iconPosition="right" className="bg-[#0F172A] hover:bg-[#2563EB] hover:border-[#2563EB]">
-                    Shop the Collection
-                  </Button>
-                </Link>
-                <Link to="/about">
-                  <Button variant="outline" size="lg" className="border-slate-200">
-                    Our Story
-                  </Button>
-                </Link>
-              </div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-24">
+          <div className="max-w-xl text-left text-white border-l border-white/20 pl-6 sm:pl-8 py-4">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4C5B9] mb-4 block">
+              Atelier Knitwear Series
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light uppercase tracking-tight text-white leading-[1.1] mb-6">
+              Comfort <br />
+              <span className="font-extrabold">Refined</span>
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-md font-medium">
+              We design timeless garments from certified eco-friendly fibers, double-tailored to provide lasting structure and warmth.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/products">
+                <Button variant="secondary" size="lg" className="bg-white hover:bg-slate-100 !text-black border-white font-bold uppercase tracking-widest text-[10px] px-6 py-3">
+                  Shop Lookbook
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 font-bold uppercase tracking-widest text-[10px] px-6 py-3">
+                  Our Values
+                </Button>
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Right Interactive Lookbook Widget */}
-            <div className="lg:col-span-6">
-              <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-xl shadow-slate-100/60 relative">
-                {/* Lookbook selector tabs */}
-                <div className="flex justify-between items-center border-b border-slate-100 pb-3.5 mb-4">
-                  <div className="flex gap-2">
-                    {lookbook.map((look, index) => (
-                      <button
-                        key={look.id}
-                        onClick={() => setActiveLook(index)}
-                        className={`text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
-                          activeLook === index
-                            ? 'bg-[#0F172A] border-[#0F172A] text-white shadow-sm'
-                            : 'bg-slate-50 border-slate-100 text-[#6B7280] hover:bg-slate-100 hover:text-[#111827]'
-                        }`}
-                      >
-                        Look 0{index + 1}
-                      </button>
-                    ))}
-                  </div>
-                  <span className="text-[10px] font-bold text-[#2563EB] uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded">
-                    Featured Item
+      {/* 2. Featured Collection Section */}
+      <section className="py-24 bg-white border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#6B7280] block">Atelier Showcase</span>
+            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-[#111827] mt-2">
+              Featured Collection
+            </h2>
+            <div className="h-[1.5px] w-12 bg-[#111827] mx-auto mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} {...product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Category Grid Section */}
+      <section className="py-24 bg-[#F8FAFC] border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#6B7280] block">Curated Focus</span>
+            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-[#111827] mt-2">
+              Shop by Line
+            </h2>
+            <div className="h-[1.5px] w-12 bg-[#111827] mx-auto mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categories.map((cat) => (
+              <Link 
+                to="/products" 
+                key={cat.name} 
+                className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm block"
+              >
+                <img 
+                  src={cat.image} 
+                  alt={cat.name} 
+                  className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent flex flex-col justify-end p-6" />
+                <div className="absolute bottom-6 left-6 text-white z-10">
+                  <h3 className="text-lg font-bold uppercase tracking-wider">{cat.name}</h3>
+                  <span className="text-[10px] text-slate-300 font-bold uppercase tracking-widest group-hover:underline block mt-1">
+                    Explore &rarr;
                   </span>
                 </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                {/* Selected look display */}
-                <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
-                  <div className="sm:col-span-6 rounded-xl overflow-hidden aspect-[4/5] bg-slate-50 border border-slate-100">
-                    <img
-                      src={lookbook[activeLook].image}
-                      alt={lookbook[activeLook].title}
-                      className="w-full h-full object-cover object-center animate-fade-in"
-                    />
-                  </div>
-                  <div className="sm:col-span-6 flex flex-col justify-between h-full py-2">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B7280]">
-                        {lookbook[activeLook].category}
-                      </span>
-                      <h3 className="text-xl font-extrabold text-[#111827] mt-1 mb-2">
-                        {lookbook[activeLook].title}
-                      </h3>
-                      <p className="text-xs text-[#6B7280] leading-relaxed mb-4">
-                        {lookbook[activeLook].description}
-                      </p>
-                    </div>
+      {/* 4. Best Sellers Section */}
+      <section className="py-24 bg-white border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#6B7280] block">Customer Favorites</span>
+            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-[#111827] mt-2">
+              Best Sellers
+            </h2>
+            <div className="h-[1.5px] w-12 bg-[#111827] mx-auto mt-4" />
+          </div>
 
-                    <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <div className="flex flex-col">
-                        <span className="text-[9px] font-bold text-[#6B7280] uppercase">Price</span>
-                        <span className="text-xl font-black text-[#111827]">{lookbook[activeLook].price}</span>
-                      </div>
-                      <Link to="/products">
-                        <Button variant="secondary" size="sm" className="bg-[#2563EB] text-white flex items-center gap-1.5">
-                          <ShoppingBag className="w-3.5 h-3.5" /> View Details
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {bestSellers.map((product) => (
+              <ProductCard key={product.id} {...product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Brand Story / Craftsmanship Section - Beige backdrop and tall image */}
+      <section className="py-24 bg-[#D4C5B9]/15 border-y border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-50 border border-slate-200/80 shadow-md">
+              <img
+                src="/media__1781118956877.jpg"
+                alt="Slow Fashion Tailoring details"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <div className="lg:col-span-7 flex flex-col justify-center pl-0 lg:pl-6">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#6B7280] block">Our Philosophy</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-[#111827] mt-3 mb-6">
+                Crafted to Outlast Seasons
+              </h2>
+              
+              <p className="text-[#6B7280] text-sm leading-relaxed mb-6 font-medium">
+                At Trendystyle, we focus on the slow fashion cycle. We partner with ethically audited studios to ensure double-stitched reinforcements, organic cotton composites, and thick yarn fibers that hold shape over years.
+              </p>
+              
+              <p className="text-[#6B7280] text-sm leading-relaxed mb-8 font-medium">
+                By selecting minimal palettes—whites, creams, and beige hues—each collection layers perfectly with pieces from prior seasons. Less consumption, better craftsmanship.
+              </p>
+              
+              <div className="flex">
+                <Link to="/about">
+                  <Button variant="primary" size="md" className="bg-[#111827] text-white hover:bg-[#2563EB] font-bold uppercase tracking-widest text-[10px] px-6 py-3 shadow-md border-none">
+                    Read About Our Craft
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -253,18 +281,9 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* Feature Matrix Section */}
-      <section className="py-16 border-b border-slate-100 bg-white">
+      {/* 6. Capabilities Section */}
+      <section className="py-16 border-b border-slate-100 bg-[#F8FAFC]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-black text-[#111827] tracking-tight">
-              Craftsmanship & Sourcing
-            </h2>
-            <p className="mt-3 text-sm text-[#6B7280] font-medium">
-              We design and construct wardrobe pieces to outlast temporary trends.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feat) => (
               <FeatureCard key={feat.title} {...feat} />
@@ -273,88 +292,15 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-16 border-b border-slate-100 bg-[#F8FAFC]">
+      {/* 7. Testimonials Section */}
+      <section className="py-24 bg-white border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
-            <div>
-              <h2 className="text-2xl font-black text-[#111827]">Browse Collections</h2>
-              <p className="text-[#6B7280] text-sm mt-1">Discover custom cuts and tailoring across seasonal categories.</p>
-            </div>
-            <Link to="/products" className="text-sm font-bold text-[#2563EB] hover:underline inline-flex items-center gap-1">
-              Browse shop catalog <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { name: 'Sweaters', count: '3 Items', desc: 'Heavy cable & textured knits', bg: 'from-amber-50 to-orange-50' },
-              { name: 'Shirts', count: '2 Items', desc: 'Casual band collar & camp collar', bg: 'from-blue-50 to-indigo-50' },
-              { name: 'Outerwear', count: '2 Items', desc: 'Merino coats & denim jackets', bg: 'from-slate-100 to-slate-200/50' },
-              { name: 'Pants', count: '1 Item', desc: 'Comfort fit organic chinos', bg: 'from-emerald-50 to-teal-50' }
-            ].map((cat) => (
-              <Link 
-                key={cat.name} 
-                to="/products"
-                className={`group p-6 rounded-2xl border border-slate-100 bg-white hover:border-[#2563EB]/20 hover:shadow-md transition-all duration-300 relative overflow-hidden`}
-              >
-                <div className={`absolute right-[-20px] bottom-[-20px] w-24 h-24 rounded-full bg-gradient-to-tr ${cat.bg} opacity-30 group-hover:scale-150 transition-transform duration-500`} />
-                <span className="text-[10px] font-bold text-[#6B7280] uppercase tracking-wider">{cat.count}</span>
-                <h3 className="text-lg font-bold text-[#111827] mt-1 group-hover:text-[#2563EB] transition-colors">{cat.name}</h3>
-                <p className="text-xs text-[#6B7280] mt-1.5 leading-relaxed font-semibold">{cat.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products Section */}
-      <section className="py-16 border-b border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl font-black text-[#111827] tracking-tight">New Arrivals</h2>
-              <p className="text-[#6B7280] text-sm mt-1.5">Fresh items and textured garments just added to our line.</p>
-            </div>
-            <Link to="/products">
-              <Button variant="outline" size="sm" className="border-slate-200">
-                View Shop
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Best Sellers Section */}
-      <section className="py-16 border-b border-slate-100 bg-[#F8FAFC]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-black text-[#111827] tracking-tight">Best Sellers</h2>
-            <p className="mt-3 text-sm text-[#6B7280] font-medium">Customer-favorite essentials and high-rated knits.</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {bestSellers.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Testimonials Section */}
-      <section className="py-16 border-b border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-black text-[#111827] tracking-tight">Styling Reviews</h2>
-            <p className="mt-3 text-sm text-[#6B7280] font-medium">
-              See how customers rate the comfort, tailoring, and quality of our garments.
-            </p>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#6B7280] block">Press & reviews</span>
+            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-[#111827] mt-2">
+              Atelier Reviews
+            </h2>
+            <div className="h-[1.5px] w-12 bg-[#111827] mx-auto mt-4" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -365,38 +311,30 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* Promotional Banner (Conversion Section) */}
-      <section className="py-16 bg-[#F8FAFC]">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-slate-900 bg-[#0F172A] p-8 sm:p-12 text-center relative overflow-hidden shadow-lg">
-            {/* Background design elements */}
-            <div className="absolute right-[-40px] bottom-[-40px] w-64 h-64 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute left-[-40px] top-[-40px] w-64 h-64 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
-            
-            <span className="text-[10px] font-bold text-[#2563EB] tracking-widest uppercase bg-blue-500/10 px-3.5 py-1.5 rounded-full border border-blue-500/20">
-              Limited Time Welcome Offer
+      {/* 8. Newsletter Section */}
+      <section className="py-20 bg-[#F8FAFC]">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 sm:p-12 text-center shadow-sm relative overflow-hidden">
+            <span className="text-[10px] font-bold text-[#6B7280] tracking-widest uppercase bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-100">
+              The Trendystyle Atelier Club
             </span>
-            
-            <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl mt-6">
-              Upgrade Your Seasonal Wardrobe
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#111827] mt-6 uppercase">
+              Join Season Drops
             </h2>
-            
-            <p className="mt-4 text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-              Get an instant 10% discount on your first checkout. Enter code <span className="text-white font-mono font-bold bg-slate-800 px-2.5 py-1 rounded border border-slate-700">TRENDY10</span> in cart checkout.
+            <p className="mt-4 text-xs text-[#6B7280] max-w-md mx-auto leading-relaxed font-semibold">
+              Receive updates about limited knitwear restocks, ethical mill reviews, and 10% off your initial purchase.
             </p>
-            
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link to="/products">
-                <Button variant="secondary" size="lg" className="bg-[#2563EB] text-white border-none font-bold" icon={ArrowRight} iconPosition="right">
-                  Claim Discount Now
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-slate-700 hover:bg-slate-800 text-white font-bold">
-                  Shipping Questions?
-                </Button>
-              </Link>
-            </div>
+            <form onSubmit={handleSubscribe} className="mt-8 max-w-md mx-auto flex gap-2">
+              <input
+                type="email"
+                required
+                placeholder="Enter your email address"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-[#111827] placeholder-slate-400 focus:border-[#111827] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#111827] transition-all font-semibold"
+              />
+              <Button type="submit" className="bg-[#111827] hover:bg-[#2563EB] hover:border-[#2563EB] text-white shrink-0 font-bold uppercase tracking-wider text-xs px-5 py-2.5 shadow-sm active:scale-97">
+                Join
+              </Button>
+            </form>
           </div>
         </div>
       </section>

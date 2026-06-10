@@ -1,38 +1,38 @@
-# GitForge — Developer Repository Showcase & SaaS Platform
+# Trendystyle — Premium Slow-Fashion eCommerce Storefront
 
-GitForge is a high-fidelity, modern developer-focused template catalog and SaaS portal. It allows teams and individual developers to index, audit, and share boilerplate configurations, CLI scripts, and open-source packages. Built with Vite, React 19, Tailwind CSS v4, and React Router.
-
----
-
-## 📸 Screenshots
-
-### 1. Landing Hero & Interactive Shell
-Features a dark-themed futuristic hero header with call-to-actions and a live simulated terminal log widget showing repository synchronization logs.
-![GitForge Hero](./public/screenshots/hero.png)
-
-### 2. Capabilities & Features Matrix
-Showcases core functionalities (vulnerability scanning, real-time webhooks, semantic search) in a beautiful glow-bordered grid.
-![GitForge Features](./public/screenshots/features.png)
-
-### 3. Customer Testimonials
-Features sleek rating grids, user quotes, and rounded platform profiles.
-![GitForge Testimonials](./public/screenshots/testimonials.png)
+Trendystyle is a high-fidelity, editorial, and minimalist fashion eCommerce website. Designed around a curated slow-fashion philosophy, the platform focuses on clean daily essentials, organic materials, and ethical craftsmanship. Built with Vite, React, Tailwind CSS, and React Router.
 
 ---
 
-## 🚀 Key Features
+## 📸 Screenshots & Pages
 
-- **Responsive Multi-page Routing**: Fully configured navigation map supporting Homepage (`/`), Repository Browser (`/products`), About (`/about`), and Contact (`/contact`).
-- **Interactive Repository Search & Filter**: Search repositories by title, description, or technology tags. Filter dynamically by categories (Boilerplates, CLI, Libraries, Utilities) and sort by stars or forks.
-- **Contact Form Validation**: Full client-side input validation checking fields, email structures, and length constraints with a customized success modal.
-- **Polished Glassmorphism Theme**: Dark slate palette with interactive gradient buttons, blurred headers, and transitions.
+### 1. Catalog Browser (`catalog.png`)
+A modern, responsive product catalog index featuring organic knitwear, casual shirts, and outerwear. Includes a live filter-by-category bar (Sweaters, Shirts, Outerwear, Pants) and sorting systems (Top Rated, Price Low-High, Price High-Low, Title).
+![Trendystyle Catalog Browser](./public/screenshots/catalog.png)
+
+### 2. Brand Values & Craftsmanship (`about.png`)
+A story-driven page detailing the design house's history, slow fashion commitments, stats (happy customers, eco-conscious material ratios), and creator profiles.
+![Trendystyle Brand Story](./public/screenshots/about.png)
+
+### 3. Contact Atelier (`contact.png`)
+An elegant contact form with client-side validation alongside contact details (HQ address, support email) and a retail-oriented FAQ accordion covering sizing and shipping.
+![Trendystyle Contact Atelier](./public/screenshots/contact.png)
 
 ---
 
-## 🛠️ Tech Stack & Dependencies
+## 🚀 Key Storefront Features
+
+- **Asymmetric Editorial Layout**: Dark Slate & Off-White backdrop pairings, wide tracking uppercase headers, and tall lookbook image blocks.
+- **Product Card Actions**: Product image zooms on hover, custom category tags, toggleable heart wishlists, and hover-triggered cart buttons.
+- **Client-Side Product Search & Filter**: Real-time filtering by category, search text queries, and price/rating sorting.
+- **Responsive Navigation Burger**: Collapsible menu wrapper for mobile views, cart icon counts, and active-link tracking.
+
+---
+
+## 🛠️ Tech Stack & Styling
 
 - **Core**: [React 19](https://react.dev/) + [Vite 8](https://vite.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (using `@tailwindcss/vite` compiler)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Routing**: [React Router v7](https://reactrouter.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
@@ -40,19 +40,18 @@ Features sleek rating grids, user quotes, and rounded platform profiles.
 
 ## 📦 Component Library
 
-We created 6 reusable components to maintain a consistent style guide:
-1. **`Navbar`**: Responsive header with backdrop-blur filters, active state indicators, and a mobile drawer.
-2. **`Footer`**: Multi-column site directory, social links, and newsletter subscription form.
-3. **`Button`**: Modular button wrapper supporting `primary`, `secondary`, `outline`, and `ghost` variants.
-4. **`ProductCard`**: Shows detailed repository stats (stars, forks), language tags, creator avatars, and link bindings.
-5. **`FeatureCard`**: Grid panels showcasing product assets with gradient icon filters.
-6. **`TestimonialCard`**: Individual quote boxes rendering customer stars and corporate profiles.
+1. **`Navbar`**: Minimalist header using spaced brand signature typography and outline shopping/wishlist icons.
+2. **`Footer`**: Directory mappings for shipping rules, size guides, and local stores.
+3. **`Button`**: Solid flat CTA (`#0F172A`) and Accent (`#2563EB`) styles.
+4. **`ProductCard`**: High-contrast card with heart toggles, star ratings, prices, and hover zooming.
+5. **`FeatureCard`**: Minimal grids for brand certifications (Organic, Durability, Delivery).
+6. **`TestimonialCard`**: Clean editor quotes styled like a lookbook catalog.
 
 ---
 
 ## 💻 Getting Started
 
-### 1. Clone & Enter Directory
+### 1. Enter Directory
 ```bash
 cd website
 ```
