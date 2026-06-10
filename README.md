@@ -11,7 +11,7 @@ A modern, responsive product catalog index featuring organic knitwear, casual sh
 ![Trendystyle Catalog Browser](./public/screenshots/catalog.png)
 
 ### 2. Brand Values & Craftsmanship (`about.png`)
-A story-driven page detailing the design house's history, slow fashion commitments, stats (happy customers, eco-conscious material ratios), and creator profiles.
+A page detailing our design history, slow-fashion commitments, and team profiles.
 ![Trendystyle Brand Story](./public/screenshots/about.png)
 
 ### 3. Contact Atelier (`contact.png`)
