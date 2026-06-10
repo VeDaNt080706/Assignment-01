@@ -1,63 +1,63 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Terminal, Github, Twitter, Linkedin, Heart } from 'lucide-react'
+import { ShoppingBag, Instagram, Twitter, Facebook, Heart } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const links = {
-    product: [
-      { name: 'Repositories', path: '/products' },
-      { name: 'Features', path: '/' },
-      { name: 'Pricing', path: '#' },
-      { name: 'Integrations', path: '#' }
+    shop: [
+      { name: 'Shop All', path: '/products' },
+      { name: 'Knitwear & Sweaters', path: '/products' },
+      { name: 'Casual Shirts', path: '/products' },
+      { name: 'Outerwear', path: '/products' }
     ],
-    resources: [
-      { name: 'Documentation', path: '#' },
-      { name: 'Guides', path: '#' },
-      { name: 'API Reference', path: '#' },
-      { name: 'Changelog', path: '#' }
+    support: [
+      { name: 'Size Guide & Fit', path: '#' },
+      { name: 'Shipping & Delivery', path: '#' },
+      { name: 'Returns & Exchanges', path: '#' },
+      { name: 'Store Locator', path: '#' }
     ],
     company: [
-      { name: 'About', path: '/about' },
-      { name: 'Blog', path: '#' },
+      { name: 'Our Story', path: '/about' },
       { name: 'Careers', path: '#' },
-      { name: 'Contact', path: '/contact' }
+      { name: 'Ethical Sourcing', path: '#' },
+      { name: 'Contact Us', path: '/contact' }
     ]
   }
 
   const handleSubscribe = (e) => {
     e.preventDefault()
-    alert('Thank you for subscribing!')
+    alert('Thank you for subscribing to the Trendystyle newsletter!')
   }
 
   return (
-    <footer className="mt-auto border-t border-slate-900 bg-slate-950/40 backdrop-blur-sm">
+    <footer className="mt-auto border-t border-slate-100 bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           
           {/* Logo + About Section */}
           <div className="space-y-6 xl:col-span-1">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 p-1.5 text-white">
-                <Terminal className="h-5.5 w-5.5" />
+            <Link to="/" className="flex items-center gap-2.5">
+              <div className="rounded-lg bg-gradient-to-tr from-[#2563EB] to-blue-500 p-2 text-white">
+                <ShoppingBag className="h-5 w-5" />
               </div>
-              <span className="text-lg font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-                GitForge
+              <span className="text-lg font-black tracking-tight text-[#111827]">
+                Trendystyle
               </span>
             </Link>
-            <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
-              Discover, catalog, and deploy developer templates and repositories effortlessly. Powered by the open source community.
+            <p className="text-sm text-[#6B7280] max-w-xs leading-relaxed font-medium">
+              Curating comfortable, minimalist daily clothing from sustainably sourced and ethical fibers.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-slate-500 hover:text-slate-300 transition-colors">
-                <Github className="w-5 h-5" />
+              <a href="#" className="text-slate-400 hover:text-[#2563EB] transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-500 hover:text-slate-300 transition-colors">
+              <a href="#" className="text-slate-400 hover:text-[#2563EB] transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-500 hover:text-slate-300 transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" className="text-slate-400 hover:text-[#2563EB] transition-colors">
+                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -65,11 +65,11 @@ export function Footer() {
           {/* Links Section */}
           <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
             <div>
-              <h3 className="text-sm font-semibold text-slate-200 tracking-wider">Product</h3>
+              <h3 className="text-sm font-bold text-[#111827] tracking-wider uppercase">Shop</h3>
               <ul className="mt-4 space-y-2.5">
-                {links.product.map((item) => (
+                {links.shop.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.path} className="text-sm text-slate-400 hover:text-slate-200 transition-colors">
+                    <Link to={item.path} className="text-sm text-[#6B7280] hover:text-[#2563EB] transition-colors font-medium">
                       {item.name}
                     </Link>
                   </li>
@@ -77,11 +77,11 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-slate-200 tracking-wider">Resources</h3>
+              <h3 className="text-sm font-bold text-[#111827] tracking-wider uppercase">Support</h3>
               <ul className="mt-4 space-y-2.5">
-                {links.resources.map((item) => (
+                {links.support.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.path} className="text-sm text-slate-400 hover:text-slate-200 transition-colors">
+                    <Link to={item.path} className="text-sm text-[#6B7280] hover:text-[#2563EB] transition-colors font-medium">
                       {item.name}
                     </Link>
                   </li>
@@ -89,11 +89,11 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-slate-200 tracking-wider">Company</h3>
+              <h3 className="text-sm font-bold text-[#111827] tracking-wider uppercase">Company</h3>
               <ul className="mt-4 space-y-2.5">
                 {links.company.map((item) => (
                   <li key={item.name}>
-                    <Link to={item.path} className="text-sm text-slate-400 hover:text-slate-200 transition-colors">
+                    <Link to={item.path} className="text-sm text-[#6B7280] hover:text-[#2563EB] transition-colors font-medium">
                       {item.name}
                     </Link>
                   </li>
@@ -104,23 +104,23 @@ export function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-12 border-t border-slate-900 pt-8 lg:flex lg:items-center lg:justify-between gap-8">
+        <div className="mt-12 border-t border-slate-100 pt-8 lg:flex lg:items-center lg:justify-between gap-8">
           <div>
-            <h3 className="text-sm font-semibold text-slate-200">Subscribe to our newsletter</h3>
-            <p className="mt-1 text-sm text-slate-400">
-              Get the latest news and updates about templates directly in your inbox.
+            <h3 className="text-sm font-bold text-[#111827]">Subscribe to our newsletter</h3>
+            <p className="mt-1 text-sm text-[#6B7280] font-medium">
+              Join the club for size releases, season drops, and 10% off your next purchase.
             </p>
           </div>
           <form onSubmit={handleSubscribe} className="mt-4 sm:flex lg:mt-0 max-w-md w-full gap-2">
             <input
               type="email"
               required
-              placeholder="Enter your email"
-              className="w-full rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+              placeholder="Enter your email address"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-[#111827] placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#2563EB] transition-all"
             />
             <button
               type="submit"
-              className="mt-2 w-full rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700/50 hover:border-slate-600 px-4 py-2.5 text-sm font-medium text-white transition-colors sm:mt-0 sm:w-auto cursor-pointer"
+              className="mt-2 w-full rounded-xl bg-[#0F172A] hover:bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white transition-colors sm:mt-0 sm:w-auto cursor-pointer shadow-sm active:scale-97"
             >
               Subscribe
             </button>
@@ -128,15 +128,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 border-t border-slate-900 pt-8 md:flex md:items-center md:justify-between">
-          <p className="text-xs text-slate-500">
-            &copy; {currentYear} GitForge, Inc. All rights reserved.
+        <div className="mt-12 border-t border-slate-100 pt-8 md:flex md:items-center md:justify-between">
+          <p className="text-xs text-[#6B7280] font-semibold">
+            &copy; {currentYear} Trendystyle, Inc. All rights reserved.
           </p>
-          <p className="mt-4 text-xs text-slate-500 md:mt-0 flex items-center justify-center gap-1">
-            Built with <Heart className="w-3 h-3 text-red-500 fill-current" /> for developers everywhere.
+          <p className="mt-4 text-xs text-[#6B7280] font-semibold md:mt-0 flex items-center justify-center gap-1">
+            Made with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> for comfortable living.
           </p>
         </div>
       </div>
     </footer>
   )
 }
+export default Footer

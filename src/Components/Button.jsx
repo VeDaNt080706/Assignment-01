@@ -12,10 +12,10 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none cursor-pointer'
   
   const variants = {
-    primary: 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-500/10 hover:shadow-purple-500/20 border border-purple-500/20',
-    secondary: 'bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700/50',
-    outline: 'bg-transparent hover:bg-slate-900 text-slate-200 border border-slate-700 hover:border-slate-600',
-    ghost: 'bg-transparent hover:bg-slate-800/50 text-slate-400 hover:text-slate-100'
+    primary: 'bg-[#0F172A] hover:bg-[#1E293B] text-white shadow-md shadow-slate-900/15 border border-[#0F172A]',
+    secondary: 'bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-md shadow-blue-500/15 border border-[#2563EB]',
+    outline: 'bg-transparent hover:bg-slate-100 text-[#111827] border border-slate-200 hover:border-slate-300',
+    ghost: 'bg-transparent hover:bg-slate-100/70 text-[#6B7280] hover:text-[#111827]'
   }
 
   const sizes = {
